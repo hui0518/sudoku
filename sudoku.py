@@ -1,15 +1,18 @@
 import copy
 import numpy as np
 
-sample = ['005080302',
-          '420000500',
-          '600004000',
-          '000300900',
-          '300026000',
-          '000000070',
-          '000070680',
-          '098000004',
-          '000500000']
+s = []
+
+for i in range(27):
+    s.append(input())
+    
+s = list(map(lambda x : x.rjust(3, '0'),s))
+
+sample = []
+
+for i in range(9):
+    sample.append(s[3*i] + s[3*i+1] + s[3*i+2])
+
 f = lambda x : list(map(int, x))
 sample = np.array(list(map(f, sample)))
 
